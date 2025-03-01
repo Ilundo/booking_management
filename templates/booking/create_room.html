@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h3>створити нову кiмнату</h3>
+<form method="post">
+    {% csrf_token %}
+
+    Номер кiмнати:<input type="number" name="room_number" required>
+    Кiлькiсть столикiв<input type="number" name="tables_num">
+    
+    <input type="submit"value="створити">
+</form>
+{%endblock%}

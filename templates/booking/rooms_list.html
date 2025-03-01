@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h3>Список кмнат</h3>
+<ul>    
+    {% for room in rooms_list %}
+        <li> <a href="{% url 'tables-list' room.id %}">Room №{{room.number}}</a></li>
+    {% endfor %}
+</ul>
+{%endblock%}
