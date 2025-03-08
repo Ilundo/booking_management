@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post">
+    {% csrf_token %}
+    Номер кiнмати<input type="number" name="room_num">
+    Iмя вiдвiдувача<input type="text" name="visitor_name">
+    Дата<input type="datetime-local" name="datetime">
+    
+    <input type="submit" value="Забронювати">
+</form>
+{% endblock %}
