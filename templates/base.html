@@ -15,6 +15,21 @@
     <a href = "{%url 'book-room'%}"class="btn btn-primary">Забронювати кiмнату</a>
     <a href = "{%url 'book-table'%}"class="btn btn-primary">Забронювати столик</a>
     <a href = "{%url 'create-table'%}"class="btn btn-primary">Створити столик</a>
+    {% if user.is_authenticated %}
+        <p>
+        hello {{user}}
+
+        <form method="post"action="{%url 'logout'%}">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-warning" value="Logout">
+        </form>
+    </p>
+
+    {% else %}
+        <a href="{% url 'login'%}" class="btn btn-warning">Login</a>
+    {% endif %}
+    <a href="{%url 'register'%}"class="btn btn-warning">Register</a>
+
     {% block content %}
     
     {% endblock %}
